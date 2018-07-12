@@ -5,7 +5,8 @@ exports.config = {
   namespace: 'cw-latest-news',
   outputTargets:[
     {
-      type: 'dist'
+      type: 'dist',
+      serviceWorker: false
     },
     {
       type: 'www',
