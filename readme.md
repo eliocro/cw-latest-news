@@ -6,13 +6,13 @@
 Install from NPM
 
 ```
-$ npm install --save cw-latest-news
+$ npm install --save @frontkom/cw-latest-news
 ```
 
 Put a script tag similar to this in the head of your index.html
 
 ```
-<script src="/node_modules/cw-latest-news/dist/cw-latest-news.js"></script>
+<script src="/node_modules/@frontkom/cw-latest-news/dist/cw-latest-news.js"></script>
 ```
 
 Then you can use the element anywhere in your template, JSX, html, etc.
@@ -38,7 +38,7 @@ Then you can use the element anywhere in your template, JSX, html, etc.
 <head>
   <meta charset="utf-8">
   <title>CW Latest News Widget</title>
-  <script src="./node_modules/cw-latest-news/dist/cw-latest-news.js"></script>
+  <script src="./node_modules/@frontkom/cw-latest-news/dist/cw-latest-news.js"></script>
 </head>
 <body>
   <h1>CW Latest News Widget</h1>
