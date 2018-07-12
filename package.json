@@ -1,7 +1,7 @@
 {
   "name": "@frontkom/cw-latest-news",
   "version": "0.0.2",
-  "description": "Stencil Component Starter",
+  "description": "A widget for CW Latest News",
   "module": "dist/esm/index.js",
   "main": "dist/index.js",
   "types": "dist/types/components.d.ts",
@@ -23,6 +23,10 @@
     "@stencil/sass": "0.0.5",
     "@types/jest": "^21.1.1",
     "jest": "^21.2.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/front/cw-latest-news.git"
   },
   "author": "Elio <elio@front.no>",
   "license": "MIT",

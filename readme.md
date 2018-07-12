@@ -43,8 +43,9 @@ Then you can use the element anywhere in your template, JSX, html, etc.
 <body>
   <h1>CW Latest News Widget</h1>
   <cw-latest-news
-    solr="http://solr1.newsfront.no/solr/newsfront-computerworld/select/"
-    rows="7"
+    solr="https://solrproxy.devz.no/solr/newsfront-computerworld"
+    tag="business-intelligence"
+    rows="6"
   ></cw-latest-news>
 </body>
 </html>
