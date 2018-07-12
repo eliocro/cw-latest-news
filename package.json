@@ -16,7 +16,8 @@
     "test.watch": "jest --watch"
   },
   "dependencies": {
-    "moment": "^2.22.2"
+    "moment": "^2.22.2",
+    "moment-with-locales-es6": "^1.0.1"
   },
   "devDependencies": {
     "@stencil/core": "^0.10.0",

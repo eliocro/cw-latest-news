@@ -1,7 +1,9 @@
 
 import { Component, Prop, State } from '@stencil/core';
-import moment from 'moment';
 import Solr from '../../solr';
+
+import moment from 'moment-with-locales-es6';
+moment.locale('nb');
 
 const site = 'http://www.cw.no';
 const imagePath = 'http://static.cw.newsfront.no/sites/default/files/styles/crop_image_hero_small/public';
@@ -17,7 +19,7 @@ function parseArticle (doc) : void {
 }
 
 function formatDate (ts) : string {
-  return moment(ts).format('ddd D MMM, [kl] HH:mm');
+  return moment(ts).format('dddd D MMM, [kl] HH:mm');
 }
 
 
