@@ -1,0 +1,42 @@
+{
+  "name": "@frontkom/cw-latest-news",
+  "version": "0.0.1",
+  "description": "Stencil Component Starter",
+  "module": "dist/esm/index.js",
+  "main": "dist/index.js",
+  "types": "dist/types/components.d.ts",
+  "collection": "dist/collection/collection-manifest.json",
+  "files": [
+    "dist/"
+  ],
+  "scripts": {
+    "build": "stencil build",
+    "start": "stencil build --dev --watch --serve",
+    "test": "jest",
+    "test.watch": "jest --watch"
+  },
+  "dependencies": {
+    "moment": "^2.22.2"
+  },
+  "devDependencies": {
+    "@stencil/core": "^0.10.0",
+    "@stencil/sass": "0.0.5",
+    "@types/jest": "^21.1.1",
+    "jest": "^21.2.1"
+  },
+  "author": "Elio <elio@front.no>",
+  "license": "MIT",
+  "jest": {
+    "transform": {
+      "^.+\\.(ts|tsx)$": "<rootDir>/node_modules/@stencil/core/testing/jest.preprocessor.js"
+    },
+    "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(tsx?|jsx?)$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "json",
+      "jsx"
+    ]
+  }
+}
