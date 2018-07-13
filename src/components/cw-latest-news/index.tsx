@@ -10,11 +10,9 @@ const imagePath = 'http://static.cw.newsfront.no/sites/default/files/styles/crop
 
 
 function parseArticle (doc) : void {
-  doc.media = doc.media && JSON.parse(doc.media);
-  if(doc.media && doc.media.image) {
-    const image = doc.media.image.main;
-    doc.image_url = `${imagePath}/${image.path}`;
-  }
+  const media = doc.media && JSON.parse(doc.media);
+  const image = media && media.image && media.image.main;
+  doc.image_url = image && `${imagePath}/${image.path}`;
   doc.url = `${site}/${doc.path_alias}`;
 }
 
@@ -42,7 +40,7 @@ export class LatestNews {
 
   load = async () => {
     try {
-      console.log('Loading articles...');
+      // console.log('Loading articles...');
       const data = await this.solrClient.getArticles(this.rows, this.start, this.tag);
       data.docs.forEach(d => parseArticle(d));
       this.articles = data.docs;
