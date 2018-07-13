@@ -30,9 +30,11 @@ function formatDate (ts) : string {
 })
 export class LatestNews {
   @State() articles: any[];
+
   @Prop() tag: string;
   @Prop() rows: number;
   @Prop() start: number;
+  current: string;
 
   @Prop() solr: string;
   @Prop() solrProxy: string;
@@ -40,11 +42,9 @@ export class LatestNews {
 
   load = async () => {
     try {
-      // console.log('Loading articles for tag', this.tag);
+      console.log('Loading articles...');
       const data = await this.solrClient.getArticles(this.rows, this.start, this.tag);
       data.docs.forEach(d => parseArticle(d));
-      // console.log('Loaded', data.docs);
-
       this.articles = data.docs;
     }
     catch(err) {
@@ -52,12 +52,21 @@ export class LatestNews {
     }
   };
 
-  componentDidLoad () {
+  componentWillLoad () {
     if(!this.solr) {
       return;
     }
     this.solrClient = new Solr(this.solr, this.solrProxy);
-    this.load();
+    this.current = [this.rows, this.start, this.tag].join(',');
+    return this.load();
+  }
+
+  componentDidUpdate () {
+    const next = [this.rows, this.start, this.tag].join(',');
+    if(next !== this.current) {
+      this.current = next;
+      return this.load();
+    }
   }
 
   render () {
