@@ -1,6 +1,6 @@
 {
   "name": "@frontkom/cw-latest-news",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "A widget for CW Latest News",
   "module": "dist/esm/index.js",
   "main": "dist/index.js",
